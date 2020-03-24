@@ -36,8 +36,8 @@
 									value="dvd"
 								></el-option>
 								<el-option
-									label="电脑"
-									value="labtop"
+									label="姓名"
+									value="name"
 								></el-option>
 							</el-select>
 						</el-form-item>
@@ -91,6 +91,13 @@
 <script>
 export default {
 	data () {
+		let validatorName = (rule, value, callback) => {
+			let num = Number(rule.field.match(/\d+/g))
+			if (this.ruleForm.tableData[num].goods === 'name' && !value) {
+				callback(new Error('请输入姓名'))
+			}
+			callback();
+		}
 		return {
 			ruleForm: {
 				name: '',
@@ -119,12 +126,18 @@ export default {
 				}],
 				//规则
 				rules: {
-					name: [{ required: true, message: '名字不能为空', trigger: 'blur' }],
-					goods: [{ required: true, message: '产品不能为空', trigger: 'change' }],
+					goods: [{ required: true, message: '名字不能为空', trigger: 'change' }],
+					name: [{ validator: validatorName, trigger: 'blur' }],
 					date: [{ required: true, message: '日期不能为空', trigger: 'blur' }]
 				},
 			}
 		};
+	},
+	created () {
+		this.ruleForm.tableData = this.ruleForm.tableData.map(item => Object.assign({}, item, {
+			date: '',
+			name: '',
+		}))
 	},
 	methods: {
 		submitForm (formName) {
@@ -137,6 +150,7 @@ export default {
 				}
 			});
 		},
+
 	}
 }
 </script>
