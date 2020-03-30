@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server --config webpack.config.js"
+    "build": "webpack --config webpack.config.dev.js",
+    "dev": "webpack-dev-server --config build/webpack.config.dev.js"
   },
   "keywords": [],
   "author": "",
