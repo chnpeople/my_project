@@ -14,6 +14,7 @@
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
+    "crypto-js": "^4.0.0",
     "element-ui": "^2.13.0",
     "vue": "^2.6.11",
     "vue-loader": "^15.8.3",

@@ -19,6 +19,6 @@ export default {
 
 <style>
 #test {
-	color: red;
+	/* color: red; */
 }
 </style>

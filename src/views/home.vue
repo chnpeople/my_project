@@ -1,17 +1,59 @@
 <template>
-  <div>
-    <change></change>
-    <selected></selected>
-  </div>
+	<div>
+		<el-container>
+			<el-container>
+				<el-aside width="200px">
+					<el-menu
+						default-active="1-1"
+						class="el-menu-vertical-demo"
+						background-color="#545c64"
+						text-color="#fff"
+						active-text-color="#ffd04b"
+						@select="getIndex"
+						style="height: 800px"
+					>
+						<el-submenu index="1">
+							<template slot="title">
+								<i class="el-icon-location"></i>
+								<span>项目</span>
+							</template>
+							<el-menu-item-group>
+								<el-menu-item index="1-1">表格嵌套表单</el-menu-item>
+								<el-menu-item @click="$router.push('/keepalive')">keepAlive</el-menu-item>
+								<el-menu-item index="1-2">AES加密</el-menu-item>
+							</el-menu-item-group>
+						</el-submenu>
+					</el-menu>
+				</el-aside>
+				<el-main>
+					<change v-if="index === '1-1'"></change>
+					<selected v-if="index === '1-1'"></selected>
+					<aes v-if="index === '1-2'"></aes>
+				</el-main>
+			</el-container>
+		</el-container>
+	</div>
 </template>
 
 <script>
 import change from '../components/change.vue';
 import selected from '../components/selected.vue';
+import aes from '../components/aes.vue'
 export default {
-  components: {
-    change, selected
-  }
+	data () {
+		return {
+			index: '1-1',
+		}
+	},
+	components: {
+		change, selected, aes
+	},
+	methods: {
+		getIndex (index) {
+			console.log(index);
+			this.index = index;
+		}
+	},
 
 }
 </script>
