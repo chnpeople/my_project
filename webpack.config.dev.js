@@ -50,5 +50,18 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
     })
-  ]
+  ],
+  devServer: {
+    // contentBase: path.join(__dirname, 'dist'),
+    port: 8181,
+    proxy: {
+      '/json': {
+        target: 'https://api.ithome.com/json',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/json': ''
+        }
+      }
+    }
+  }
 }
