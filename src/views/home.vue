@@ -22,6 +22,7 @@
 								<el-menu-item @click="$router.push('/keepalive')">keepAlive</el-menu-item>
 								<el-menu-item index="1-2">AES加密</el-menu-item>
 								<el-menu-item index="1-3">中断axios</el-menu-item>
+								<el-menu-item index="1-4">echarts</el-menu-item>
 							</el-menu-item-group>
 						</el-submenu>
 					</el-menu>
@@ -31,6 +32,7 @@
 					<selected v-if="index === '1-1'"></selected>
 					<aes v-if="index === '1-2'"></aes>
 					<cancelAjax v-if="index === '1-3'" />
+					<echarts v-if="index === '1-4'" />
 				</el-main>
 			</el-container>
 		</el-container>
@@ -38,10 +40,18 @@
 </template>
 
 <script>
-import change from '../components/change.vue';
-import selected from '../components/selected.vue';
-import aes from '../components/aes.vue';
-import cancelAjax from '../components/cancelAjax.vue'
+// import change from '../components/change.vue';
+// import selected from '../components/selected.vue';
+// import aes from '../components/aes.vue';
+// import cancelAjax from '../components/cancelAjax.vue';
+// import echarts from '../components/echarts.vue';
+
+const change = () => import('../components/change.vue');
+const selected = () => import('../components/selected.vue');
+const aes = () => import('../components/aes.vue');
+const cancelAjax = () => import('../components/cancelAjax.vue');
+const echarts = () => import('../components/echarts.vue');
+
 export default {
 	data () {
 		return {
@@ -49,7 +59,7 @@ export default {
 		}
 	},
 	components: {
-		change, selected, aes, cancelAjax
+		change, selected, aes, cancelAjax, echarts
 	},
 	methods: {
 		getIndex (index) {
