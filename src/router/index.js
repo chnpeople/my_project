@@ -5,20 +5,20 @@ import {
 } from '../libs/axios'
 Vue.use(VueRouter)
 
-// import home from '../views/home.vue';
-// import KeepAlive from '../views/keepAlive.vue';
+import home from '../views/home.vue';
+import KeepAlive from '../views/keepAlive.vue';
 
 const routes = [{
 	path: '/',
 	name: 'home',
-	component: () => import('../views/home.vue'),
+	component: home,
 	meta: {
 		keepAlive: false
 	}
 }, {
 	path: '/keepalive',
 	name: 'KeepAlive',
-	component: () => import('../views/keepAlive.vue'),
+	component: KeepAlive,
 	meta: {
 		keepAlive: true
 	}
