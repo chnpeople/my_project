@@ -40,17 +40,17 @@
 </template>
 
 <script>
-import change from '../components/change.vue';
-import selected from '../components/selected.vue';
-import aes from '../components/aes.vue';
-import cancelAjax from '../components/cancelAjax.vue';
-import echarts from '../components/echarts.vue';
+// import change from '../components/change.vue';
+// import selected from '../components/selected.vue';
+// import aes from '../components/aes.vue';
+// import cancelAjax from '../components/cancelAjax.vue';
+// import echarts from '../components/echarts.vue';
 
-// const change = () => import('../components/change.vue');
-// const selected = () => import('../components/selected.vue');
-// const aes = () => import('../components/aes.vue');
-// const cancelAjax = () => import('../components/cancelAjax.vue');
-// const echarts = () => import('../components/echarts.vue');
+const change = () => import('../components/change.vue');
+const selected = () => import('../components/selected.vue');
+const aes = () => import('../components/aes.vue');
+const cancelAjax = () => import('../components/cancelAjax.vue');
+const echarts = () => import('../components/echarts.vue');
 
 export default {
 	data () {
