@@ -23,6 +23,7 @@
 								<el-menu-item index="1-2">AES加密</el-menu-item>
 								<el-menu-item index="1-3">中断axios</el-menu-item>
 								<el-menu-item index="1-4">echarts</el-menu-item>
+								<el-menu-item index="1-5">取数组最大值</el-menu-item>
 							</el-menu-item-group>
 						</el-submenu>
 					</el-menu>
@@ -33,6 +34,7 @@
 					<aes v-if="index === '1-2'"></aes>
 					<cancelAjax v-if="index === '1-3'" />
 					<echarts v-if="index === '1-4'" />
+					<getBigNum v-if="index === '1-5'" />
 				</el-main>
 			</el-container>
 		</el-container>
@@ -51,6 +53,7 @@ const selected = () => import('../components/selected.vue');
 const aes = () => import('../components/aes.vue');
 const cancelAjax = () => import('../components/cancelAjax.vue');
 const echarts = () => import('../components/echarts.vue');
+const getBigNum = () => import('../components/getBigNum.vue');
 
 export default {
 	data () {
@@ -59,7 +62,7 @@ export default {
 		}
 	},
 	components: {
-		change, selected, aes, cancelAjax, echarts
+		change, selected, aes, cancelAjax, echarts, getBigNum
 	},
 	methods: {
 		getIndex (index) {
