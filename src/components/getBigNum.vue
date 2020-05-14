@@ -4,9 +4,13 @@
 		<p><span>数组b=</span>{{arr2}}</p>
 		<div style="color: blue; fontSize: 21px">
 			方法1：Math.max(...a) ------ 9;
+			<br />
+			<br />
 			方法2：Math.max.apply(this,a) -----9;
-
-			方法1可以求两个数组的最大值
+			<br />
+			<br />
+			方法1可以求两个数组的最大值:
+			<br />
 			Math.max(...a,...b); ------10
 		</div>
 	</div>
