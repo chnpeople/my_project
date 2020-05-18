@@ -112,7 +112,7 @@ export default {
 					})
 				})
 			} else {
-				this.$refs.multipleTable.clearSelection()
+				// this.$refs.multipleTable.clearSelection()
 			}
 		},
 		//获取选中的表格选项
