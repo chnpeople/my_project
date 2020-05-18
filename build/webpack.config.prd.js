@@ -2,18 +2,18 @@ const path = require('path'); //nodeJs的基本包
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
+  mode: "production",
+
+  devtool: false,
   // 入口文件，用绝对路径，保证我们不因为路径发生错误
   //path.join(__dirname, 'src/index.js')中__dirname表示当前文件的路径，path.join就是将当前文件的路径跟'src/index.js'拼接起来，形成一个绝对路径
   entry: path.join(__dirname, '../src/index.js'),
   //输出文件，取名为bundle.js，路径为dist文件夹
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, '../dist')
+    path: path.join(__dirname, '../web')
   },
-  devServer: {
-    contentBase: 'dist'
-  },
-  mode: "development",
+
   module: {
     rules: [{
         test: /\.vue$/,
@@ -44,6 +44,7 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
@@ -51,17 +52,5 @@ module.exports = {
       filename: 'index.html',
     })
   ],
-  devServer: {
-    // contentBase: path.join(__dirname, 'dist'),
-    port: 8080,
-    proxy: {
-      '/json': {
-        target: 'https://api.ithome.com/json',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/json': ''
-        }
-      }
-    }
-  }
+
 }
