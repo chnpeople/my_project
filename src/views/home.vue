@@ -25,6 +25,7 @@
 								<el-menu-item index="1-4">echarts</el-menu-item>
 								<el-menu-item index="1-5">取数组最大值</el-menu-item>
 								<el-menu-item index="1-6">树形表格下拉(每次只展开一个)</el-menu-item>
+								<el-menu-item index="1-7">carto</el-menu-item>
 							</el-menu-item-group>
 						</el-submenu>
 					</el-menu>
@@ -37,6 +38,7 @@
 					<echarts v-if="index === '1-4'" />
 					<getBigNum v-if="index === '1-5'" />
 					<treeTable v-if="index === '1-6'" />
+					<carto v-if="index === '1-7'" />
 				</el-main>
 			</el-container>
 		</el-container>
@@ -57,6 +59,7 @@ const cancelAjax = () => import('../components/cancelAjax.vue');
 const echarts = () => import('../components/echarts.vue');
 const getBigNum = () => import('../components/getBigNum.vue');
 const treeTable = () => import('../components/treeTable.vue');
+const carto = () => import('../components/carto.vue');
 
 export default {
 	data () {
@@ -65,7 +68,7 @@ export default {
 		}
 	},
 	components: {
-		change, selected, aes, cancelAjax, echarts, getBigNum, treeTable
+		change, selected, aes, cancelAjax, echarts, getBigNum, treeTable, carto
 	},
 	methods: {
 		getIndex (index) {
