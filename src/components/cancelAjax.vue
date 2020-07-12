@@ -39,7 +39,7 @@ export default {
 		test () {
 			this.$axios({
 				methods: 'get',
-				uri: 'http://161.117.187.9:8282/api',
+				uri: 'http://143.92.46.81:8282/api',
 				successCallback: res => {
 					console.log(res);
 				}

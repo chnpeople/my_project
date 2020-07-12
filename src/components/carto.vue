@@ -14,7 +14,7 @@ export default {
     runDemo() {
       this.$nextTick(() => {
         const carto = this.$carto;
-        const map = L.map("map").setView([30, 0], 3);
+        const map = L.map("map").setView([116.397128, 39.916527], 5);
         map.scrollWheelZoom.disable();
 
         L.tileLayer(
@@ -25,12 +25,12 @@ export default {
         ).addTo(map);
 
         const client = new carto.Client({
-          apiKey: "default_public",
-          username: "cartojs-test"
+          apiKey: "apikey",
+          username: "brelsfoeagain"
         });
 
         const source = new carto.source.Dataset(
-          "ne_10m_populated_places_simple"
+          "hms_efh_2009tiger_shark"
         );
         const style = new carto.style.CartoCSS(`
         #layer {
