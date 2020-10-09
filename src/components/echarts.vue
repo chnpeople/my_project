@@ -7,11 +7,12 @@
 </template>
 
 <script>
+import echarts from 'echarts';
 export default {
 	methods: {
 		myEcharts () {
 			// 基于准备好的dom，初始化echarts实例
-			var myChart = this.$echarts.init(document.getElementById('main'));
+			var myChart = echarts.init(document.getElementById('main'));
 
 			// 指定图表的配置项和数据
 			var option = {
