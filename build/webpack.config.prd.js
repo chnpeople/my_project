@@ -57,10 +57,16 @@ module.exports = {
       filename: 'index.html',
     }),
     new webpack.DllReferencePlugin({
-      manifest: path.resolve(__dirname, '../dll/manifest.json')
+      manifest: path.resolve(__dirname, '../dll/mydll.manifest.json'),
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: path.resolve(__dirname, '../dll/echart.manifest.json'),
     }),
     new AddAssetHtmlWebpackPlugin({
-      filepath: path.resolve(__dirname, '../dll/mydll.dll.js')
+      filepath: path.resolve(__dirname, '../dll/mydll.dll.js'),
+    }),
+    new AddAssetHtmlWebpackPlugin({
+      filepath: path.resolve(__dirname, '../dll/echart.dll.js'),
     }),
     new CleanWebpackPlugin(),
     new UglifyJsPlugin({

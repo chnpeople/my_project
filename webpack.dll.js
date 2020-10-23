@@ -3,7 +3,8 @@ const {resolve} = require('path')
 
 module.exports = {
   entry: {
-    mydll: ['echarts', 'element-ui']
+    mydll: ['element-ui'],
+    echart: ['echarts']
   },
   output: {
     filename: '[name].dll.js',
@@ -13,7 +14,11 @@ module.exports = {
   plugins: [
     new webpack.DllPlugin({
       name: '[name]_[hash]',
-      path: resolve(__dirname, 'dll/manifest.json')
+      path: resolve(__dirname, 'dll/[name].manifest.json')
+    }),
+    new webpack.DllPlugin({
+      name: '[name]_[hash]',
+      path: resolve(__dirname, 'dll/[name].manifest.json')
     })
   ]
 }
