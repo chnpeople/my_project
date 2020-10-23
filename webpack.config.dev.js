@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	mode: "development",
+	devtool: 'source-map',
 	// 入口文件，用绝对路径，保证我们不因为路径发生错误
 	//path.join(__dirname, 'src/index.js')中__dirname表示当前文件的路径，path.join就是将当前文件的路径跟'src/index.js'拼接起来，形成一个绝对路径
 	entry: path.join(__dirname, './src/index.js'),

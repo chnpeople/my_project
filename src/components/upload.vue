@@ -40,6 +40,7 @@ export default {
             }
         },
         uploadFile(item) {
+            debugger;
             console.log(item)
             let fr = new FileReader();
             console.log(fr)

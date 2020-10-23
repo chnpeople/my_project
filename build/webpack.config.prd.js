@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -62,6 +63,17 @@ module.exports = {
       filepath: path.resolve(__dirname, '../dll/mydll.dll.js')
     }),
     new CleanWebpackPlugin(),
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+           drop_debugger: true, //debugger
+           drop_console: true,// console
+           pure_funcs:['console.log'] // 移除console
+        },
+      },
+      sourceMap: false,
+      parallel: true,
+    })
   ],
 
 }
