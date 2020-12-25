@@ -1,11 +1,17 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import ElementUI from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
-import { ajax } from "./libs/axios";
-import "./assets/css/default.css";
-
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import './assets/style/element-variables.scss';
+import { ajax } from './libs/axios';
+import './assets/css/default.css';
+import VueAMap from 'vue-amap';
+Vue.use(VueAMap);
+// 初始化vue-amap
+VueAMap.initAMapApiLoader({
+  key: '45dd1f5794b91546305683568861cd94',
+});
 Vue.use(ElementUI);
 // const root = document.createElement('div');
 // document.body.appendChild(root);
@@ -24,6 +30,6 @@ Vue.mixin({
 new Vue({
   router,
   ajax,
-  myOption: "不要看我的控制台",
+  myOption: '不要看我的控制台',
   render: (h) => h(App),
-}).$mount("#app");
+}).$mount('#app');
