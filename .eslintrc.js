@@ -4,18 +4,18 @@ module.exports = {
     node: true,
   },
   rules: {
-    indent: ["error", 2],
-    quotes: ["error", "double"],
-    semi: ["error", "always"],
-    "no-console": "error",
-    "no-trailing-spaces": "error",
-    "no-tabs": "off",
-    "arrow-parens": 0,
+    indent: ['error', 2],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
+    'no-console': 'error',
+    'no-trailing-spaces': 'error',
+    'no-tabs': 'off',
+    'arrow-parens': 0,
   },
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2015,
-    sourceType: "module",
+    sourceType: 'module',
     // allowImportExportEverywhere: true
   },
 };

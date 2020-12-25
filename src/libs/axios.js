@@ -1,5 +1,5 @@
-import Vue from "vue";
-import axios from "axios";
+import Vue from 'vue';
+import axios from 'axios';
 
 function ajax(options) {
   const CancelToken = axios.CancelToken;

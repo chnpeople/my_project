@@ -1,13 +1,13 @@
-import echarts from "echarts";
+import echarts from 'echarts';
 
 export default {
   bind: (el) => {
     el.resizeEventHandler = () => el.echartsInstance.resize();
 
     if (window.attachEvent) {
-      window.attachEvent("onresize", el.resizeEventHandler);
+      window.attachEvent('onresize', el.resizeEventHandler);
     } else {
-      window.addEventListener("resize", el.resizeEventHandler, false);
+      window.addEventListener('resize', el.resizeEventHandler, false);
     }
   },
 
@@ -22,9 +22,9 @@ export default {
 
   unbind: (el) => {
     if (window.attachEvent) {
-      window.detachEvent("onresize", el.resizeEventHandler);
+      window.detachEvent('onresize', el.resizeEventHandler);
     } else {
-      window.removeEventListener("resize", el.resizeEventHandler, false);
+      window.removeEventListener('resize', el.resizeEventHandler, false);
     }
 
     el.echartsInstance.dispose();

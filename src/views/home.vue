@@ -22,7 +22,9 @@
               <el-menu-item index="1-5">取数组最大值</el-menu-item>
               <el-menu-item index="1-6">树形表格下拉(每次只展开一个)</el-menu-item>
               <el-menu-item index="1-7">火星登机牌</el-menu-item>
-              <el-menu-item index="1-8">文件上传</el-menu-item>
+              <el-menu-item index="1-8">文件上传(base64)</el-menu-item>
+              <el-menu-item index="1-9">高德地图</el-menu-item>
+              <el-menu-item index="1-10">文件上传下载(二进制流)</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -37,6 +39,8 @@
         <treeTable v-if="index === '1-6'" />
         <addNew v-if="index === '1-7'" />
         <upload v-if="index === '1-8'" />
+        <gdMap v-if="index === '1-9'" />
+        <upload2 v-if="index === '1-10'" />
       </el-main>
     </el-container>
 </template>
@@ -64,6 +68,8 @@ export default {
     treeTable: () => import('../components/treeTable.vue'),
     addNew: () => import('../components/addNew.vue'),
     upload: () => import('../components/upload.vue'),
+    gdMap: () => import('../components/gdMap.vue'),
+    upload2: () => import('../components/upload2.vue'),
   },
   methods: {
     getIndex(index) {

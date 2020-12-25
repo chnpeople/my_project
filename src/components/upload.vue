@@ -41,7 +41,6 @@ export default {
       }
     },
     uploadFile(item) {
-      debugger;
       console.log(item);
       let fr = new FileReader();
       console.log(fr);
@@ -50,6 +49,10 @@ export default {
       fr.onload = (res) => {
         console.log(res);
         this.fileObj.content = res.currentTarget.result;
+        const a = document.createElement('a');
+            a.download = '测试.xlsx';
+            a.href = this.fileObj.content;
+            a.click();
       };
       this.fileObj.name = item.file.name;
     },
