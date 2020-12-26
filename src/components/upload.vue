@@ -9,7 +9,7 @@
                :drag="true"
                :limit="1"
                :http-request="uploadFile">
-      请拖拽文件到次处上传1234
+      请拖拽文件到次处上传12345
     </el-upload>
     <h1><a href="https://www.tim007.xyz/static/it-demo.apk" download="it_home.apk">it-demo下载</a></h1>
   </div>
