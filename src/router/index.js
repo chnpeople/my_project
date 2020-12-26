@@ -26,7 +26,7 @@ const routes = [
   {
     path: '/keepalive',
     name: 'KeepAlive',
-    component: () => import('../views/KeepAlive.vue'),
+    component: () => import('../views/keepAlive.vue'),
     meta: {
       keepAlive: true,
     },
