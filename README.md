@@ -28,3 +28,12 @@ git checkout -b realease1.0.2  //创建新的分支
 git push --set-upstream origin realease1.0.2 //提交新的分支
 ```
 
+
+pm2部署：
+
+```js
+1)
+pm2 deploy production setup  //首次设置，记得清空服务器上的文件
+
+2)
+pm2 deploy production update  //更新操作
