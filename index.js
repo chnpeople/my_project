@@ -1,1 +1,2 @@
-console.log('pm2部署中11111');
+// eslint-disable-next-line no-console
+console.log('test');
