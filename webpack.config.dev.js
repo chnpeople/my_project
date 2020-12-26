@@ -12,7 +12,7 @@ module.exports = {
   //输出文件，取名为bundle.js，路径为dist文件夹
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'web'),
+    path: path.join(__dirname, 'www.tim007.xyz'),
   },
 
   module: {
