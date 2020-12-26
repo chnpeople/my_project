@@ -13,7 +13,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:chnpeople/my_project.git',
       path: '/www/wwwroot/www.tim007.xyz',
-      'post-deploy': 'npm install && npm run build',
+      'post-deploy': 'git pull && npm install && npm run build',
     },
   },
 };
