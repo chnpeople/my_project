@@ -37,3 +37,6 @@ pm2 deploy production setup  //首次设置，记得清空服务器上的文件
 
 2)
 pm2 deploy production update  //更新操作
+
+3)
+chattr -i /www/wwwroot/www.tim007.com/source/dist/.user.ini   //删除user.ini
