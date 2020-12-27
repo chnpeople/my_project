@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .my-table {
     width: 1500px;
     height: 800px;
