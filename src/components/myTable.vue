@@ -74,24 +74,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .my-table {
     width: 1500px;
     height: 800px;
     /* border: 1px solid red; */
 }
 
-table {
+.my-table table {
     width: 100%;
     height: 100%;
     border: 1px solid blue;
 }
-th {
+.my-table th {
     width: 20px;
     border: 1px solid red;
     text-align: center;
 }
-td {
+.my-table td {
     width: 20px;
     border: 1px solid red;
     text-align: center;
