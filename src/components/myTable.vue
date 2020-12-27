@@ -1,10 +1,10 @@
 <template>
   <div>
       <div style="width: 220px;">
-        <el-input v-model="col" placeholder="请输入列数啊"></el-input>
+        <el-input v-model="col" placeholder="请输入列数"></el-input>
         <br>
         <br>
-         <el-input v-model="row" placeholder="请输入行数啊"></el-input>
+         <el-input v-model="row" placeholder="请输入行数"></el-input>
          <br>
          <br>
          <el-button @click="makeTable">生成表格</el-button>
