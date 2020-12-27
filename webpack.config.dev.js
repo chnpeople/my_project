@@ -90,6 +90,20 @@ module.exports = {
           '^/api': '',
         },
       },
+      '/version': {
+        target: 'http://api.tim007.xyz:8282/version',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/version': '',
+        },
+      },
+      '/upload': {
+        target: 'http://api.tim007.xyz:8383/upload',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/upload': '',
+        },
+      },
     },
   },
 };

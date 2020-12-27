@@ -6,11 +6,14 @@ function ajax(options) {
   axios({
     method: options.methods,
     url: options.uri,
+    data: options.data,
     cancelToken: new CancelToken(function executor(c) {
       Vue.$httpRequestList.push(c);
     }),
   }).then((res) => {
     options.successCallback && options.successCallback(res);
+  }).catch(err => {
+    options.errCallback && options.errCallback(err);
   });
 }
 
