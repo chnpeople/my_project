@@ -5,6 +5,8 @@ const webpack = require('webpack');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const productionGzipExtensions = ['js', 'css'];
 
 module.exports = {
   mode: 'production',
@@ -87,6 +89,14 @@ module.exports = {
       // cache: true, //启用/禁用文件缓存（类型可布尔也可是字符串）
       parallel: true, //行化可以显着加快构建速度，因此强烈建议使用
       sourceMap: false, //使用源映射将错误消息位置映射到模块（这会减慢编译速度,cheap-source-map选项不适用于此插件)
+    }),
+    new CompressionWebpackPlugin({
+      filename: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'), //匹配文件名
+      threshold: 10240, //对10K以上的数据进行压缩
+      minRatio: 0.8,
+      deleteOriginalAssets: true, //是否删除源文件
     }),
   ],
 };
