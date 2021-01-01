@@ -42,7 +42,39 @@ module.exports = {
       {
         // 后缀名为图片：
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash:7].[ext]',
+              outputPath: '/',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 50,
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.5, 0.65],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              //ios不支持
+              // webp: {
+              //   quality: 100
+              // }
+            },
+          },
+        ],
       },
       {
         // 配置 babel
@@ -57,7 +89,9 @@ module.exports = {
       },
     ],
   },
-
+  performance: {
+    hints: false,
+  },
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
