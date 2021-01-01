@@ -78,18 +78,18 @@ module.exports = {
       filepath: path.resolve(__dirname, '../dll/echart.dll.js'),
     }),
     new CleanWebpackPlugin(),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-          drop_debugger: true, //debugger
-          drop_console: true, // console
-          pure_funcs: ['console.log'], // 移除console
-        },
-      },
-      // cache: true, //启用/禁用文件缓存（类型可布尔也可是字符串）
-      parallel: true, //行化可以显着加快构建速度，因此强烈建议使用
-      sourceMap: false, //使用源映射将错误消息位置映射到模块（这会减慢编译速度,cheap-source-map选项不适用于此插件)
-    }),
+    // new UglifyJsPlugin({
+    //   uglifyOptions: {
+    //     compress: {
+    //       drop_debugger: true, //debugger
+    //       drop_console: true, // console
+    //       pure_funcs: ['console.log'], // 移除console
+    //     },
+    //   },
+    //   // cache: true, //启用/禁用文件缓存（类型可布尔也可是字符串）
+    //   parallel: true, //行化可以显着加快构建速度，因此强烈建议使用
+    //   sourceMap: false, //使用源映射将错误消息位置映射到模块（这会减慢编译速度,cheap-source-map选项不适用于此插件)
+    // }),
     new CompressionWebpackPlugin({
       filename: '[path].gz[query]',
       algorithm: 'gzip',
