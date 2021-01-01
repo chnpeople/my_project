@@ -8,7 +8,23 @@ import './assets/style/element-variables.scss';
 import { ajax } from './libs/axios';
 import './assets/css/default.css';
 import VueAMap from 'vue-amap';
+import  Toast from './extend/index';  //项目自定义的组件
+import myToast from 'chntoast';      // npm包组件
+Vue.use(Toast);
+Vue.use(myToast);
 Vue.use(VueAMap);
+
+const plugin = {
+  install() {
+    function Test() {
+      window.console.log('你好啊！');
+    }
+    Vue.prototype.$myTest = Test;
+  }
+};
+
+Vue.use(plugin);
+
 // 初始化vue-amap
 VueAMap.initAMapApiLoader({
   key: '45dd1f5794b91546305683568861cd94',
@@ -34,3 +50,4 @@ new Vue({
   myOption: '不要看我的控制台',
   render: (h) => h(App),
 }).$mount('#app');
+

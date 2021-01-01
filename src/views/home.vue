@@ -26,6 +26,7 @@
               <el-menu-item index="1-9">高德地图</el-menu-item>
               <el-menu-item index="1-10">文件上传下载(二进制流)</el-menu-item>
               <el-menu-item index="1-11">动态生成表格</el-menu-item>
+              <el-menu-item index="1-12">Vue.extent</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -43,6 +44,7 @@
         <gdMap v-if="index === '1-9'" />
         <upload2 v-if="index === '1-10'" />
         <myTable v-if="index === '1-11'" />
+        <extendTest v-if="index === '1-12'" />
       </el-main>
     </el-container>
 </template>
@@ -57,7 +59,7 @@
 export default {
   data() {
     return {
-      index: '1-1',
+      index: '1-12',
     };
   },
   components: {
@@ -73,6 +75,7 @@ export default {
     gdMap: () => import('../components/gdMap.vue'),
     upload2: () => import('../components/upload2.vue'),
     myTable: () => import('../components/myTable.vue'),
+    extendTest: () => import('../components/extendTest.vue'),
   },
   methods: {
     getIndex(index) {
