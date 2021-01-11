@@ -27,6 +27,7 @@
               <el-menu-item index="1-10">文件上传下载(二进制流)</el-menu-item>
               <el-menu-item index="1-11">动态生成表格</el-menu-item>
               <el-menu-item index="1-12">Vue.extent</el-menu-item>
+              <el-menu-item index="1-13">在线预览office</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -45,6 +46,7 @@
         <upload2 v-if="index === '1-10'" />
         <myTable v-if="index === '1-11'" />
         <extendTest v-if="index === '1-12'" />
+        <office v-if="index === '1-13'" />
       </el-main>
     </el-container>
 </template>
@@ -76,6 +78,7 @@ export default {
     upload2: () => import('../components/upload2.vue'),
     myTable: () => import('../components/myTable.vue'),
     extendTest: () => import('../components/extendTest.vue'),
+    office: () => import('../components/office.vue'),
   },
   methods: {
     getIndex(index) {
