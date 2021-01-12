@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      content: `<div>呵呵</div>`,
+      content: ``,
       editorOption: {
         placeholder: `请在
 这里输
