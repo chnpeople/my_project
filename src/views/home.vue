@@ -28,6 +28,7 @@
               <el-menu-item index="1-11">动态生成表格</el-menu-item>
               <el-menu-item index="1-12">Vue.extent</el-menu-item>
               <el-menu-item index="1-13">在线预览office</el-menu-item>
+              <el-menu-item index="1-14">富文本编辑器</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -47,6 +48,7 @@
         <myTable v-if="index === '1-11'" />
         <extendTest v-if="index === '1-12'" />
         <office v-if="index === '1-13'" />
+        <quill v-if="index === '1-14'" />
       </el-main>
     </el-container>
 </template>
@@ -79,6 +81,7 @@ export default {
     myTable: () => import('../components/myTable.vue'),
     extendTest: () => import('../components/extendTest.vue'),
     office: () => import('../components/office.vue'),
+    quill: () => import('../components/quill.vue'),
   },
   methods: {
     getIndex(index) {
