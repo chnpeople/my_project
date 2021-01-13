@@ -30,6 +30,7 @@ export default {
           responseType: "arraybuffer",
           successCallback: (res) => {
               console.log(res);
+              console.log(mammoth);
             mammoth
               .convertToHtml({ arrayBuffer: res.data })
               .then(result => {
