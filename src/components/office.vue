@@ -41,7 +41,7 @@ export default {
         //   },
         // });
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', `http://api.tim007.xyz:8383/word`);
+      xhr.open('GET', `https://api.tim007.xyz:8383/word`);
       xhr.responseType = 'arraybuffer';
       xhr.onload = (e) => {
           let content = xhr.response;
