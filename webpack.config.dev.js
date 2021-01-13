@@ -85,14 +85,14 @@ module.exports = {
         },
       },
       '/api': {
-        target: 'http://api.tim007.xyz:8282/api',
+        target: 'http://api.tim007.xyz:8383/api',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '',
         },
       },
       '/version': {
-        target: 'http://api.tim007.xyz:8282/version',
+        target: 'http://api.tim007.xyz:8383/version',
         changeOrigin: true,
         pathRewrite: {
           '^/version': '',
@@ -103,6 +103,13 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/upload': '',
+        },
+      },
+      '/word': {
+        target: 'http://api.tim007.xyz:8383/word',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/word': '',
         },
       },
     },

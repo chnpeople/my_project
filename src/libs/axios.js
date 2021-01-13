@@ -7,6 +7,7 @@ function ajax(options) {
     method: options.methods,
     url: options.uri,
     data: options.data,
+    responseType: options.responseType,
     cancelToken: new CancelToken(function executor(c) {
       Vue.$httpRequestList.push(c);
     }),
