@@ -29,11 +29,12 @@
               <el-menu-item index="1-12">Vue.extent</el-menu-item>
               <el-menu-item index="1-13">在线预览office</el-menu-item>
               <el-menu-item index="1-14">富文本编辑器</el-menu-item>
+              <el-menu-item index="1-15">滚动事件</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
       </el-aside>
-      <el-main>
+      <el-main id="scorll">
         <change v-if="index === '1-1'"></change>
         <selected v-if="index === '1-1'"></selected>
         <aes v-if="index === '1-2'"></aes>
@@ -49,6 +50,7 @@
         <extendTest v-if="index === '1-12'" />
         <office v-if="index === '1-13'" />
         <quill v-if="index === '1-14'" />
+        <scoll v-if="index === '1-15'" />
       </el-main>
     </el-container>
 </template>
@@ -82,12 +84,20 @@ export default {
     extendTest: () => import('../components/extendTest.vue'),
     office: () => import('../components/office.vue'),
     quill: () => import('../components/quill.vue'),
+    scoll: () => import('../components/scoll.vue'),
   },
   methods: {
     getIndex(index) {
       console.log(index);
       this.index = index;
     },
+  },
+  mounted() {
+    let scrollDiv = document.getElementById('scorll');
+    console.log(scrollDiv);
+    scrollDiv.addEventListener('scroll', function() {
+        // console.log(scrollDiv.scrollTop);
+      },true);
   },
 };
 </script>
