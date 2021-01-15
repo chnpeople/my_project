@@ -1,5 +1,8 @@
 <template>
-  <div style="height: 500px;">
+  <div style="height: 500px;" ref="wrap">
+    <div style="margin-bottom: 1500px;">
+      
+    </div>
     <quill-editor v-model="content"
                   ref="myQuillEditor"
                   class="editor"
@@ -49,13 +52,24 @@ export default {
       },
     };
   },
+  created() {
+    setTimeout(() => {
+      this.content = `<p>有没有啊</p>`
+      this.$nextTick(function() {
+      this.$refs.myQuillEditor.quill.blur();
+      let scrollDiv = this.$refs.wrap;
+      scrollDiv.parentNode.scrollTop = 0;
+    });
+    }, 0);
+  },
+
   methods: {
     onEditorReady(editor) {
       // 准备编辑器
       console.log(editor);
     },
     onEditorBlur() {
-      this.content = ``;
+      // this.content = ``;
     }, // 失去焦点事件
     onEditorFocus() {
       this.content = `<div>哈哈</div>`;
