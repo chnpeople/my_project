@@ -1,7 +1,9 @@
 <template>
   <div class='wrap'
        ref="wrap">
-    <div class="fixed-right" ref="tip"></div>
+       <div class="fix-wrap" ref="tip">
+          <div class="fixed-right" ></div>
+       </div>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ export default {
       let fixedEle = this.$refs.tip;
     window.onresize = () => {
       if (scrollDiv.parentNode.parentNode.clientWidth <= 600) {
-        fixedEle.style.right = '-90px';
+        fixedEle.style.right = '-140px';
       } else {
         fixedEle.style.right = '0px';
       }
@@ -36,17 +38,27 @@ export default {
   height: 2000px;
   background-color: pink;
 }
+.fix-wrap {
+  box-sizing: border-box;
+  width: 150px;
+  height: 300px;
+  background-color: rgba(225, 225, 225, 0);
+  position: fixed;
+  top: 150px;
+  right: 0px;
+  /* z-index: 999; */
+  transition: all 1s;
+  padding-right: 50px;
+}
 .fixed-right {
   width: 100px;
   height: 300px;
   background: #ffaa00;
-  position: fixed;
-  top: 150px;
-  right: 0px;
-  transition: all 1s;
+  opacity: 1;
 }
 
-.fixed-right:hover {
+
+.fix-wrap:hover {
   right: 0px !important;
 }
 </style>

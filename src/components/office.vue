@@ -24,44 +24,44 @@ export default {
   },
   methods: {
     getWord() {
-        // this.$axios({
-        //   methods: 'get',
-        //   uri: '/word',
-        //   responseType: "arraybuffer",
-        //   successCallback: (res) => {
-        //       console.log(res);
-        //       console.log(mammoth);
-        //     mammoth
-        //       .convertToHtml({ arrayBuffer: res.data })
-        //       .then(result => {
-        //           console.log(result)
-        //           this.vHtml = result.value
-        //       })
-        //       .done();
-        //   },
-        // });
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', `https://api.tim007.xyz:8383/word`);
-      xhr.responseType = 'arraybuffer';
-      xhr.onload = (e) => {
-          let content = xhr.response;
-          console.log('eeeeeeeee', content);
-        let blob = new Blob([content]);
-        let reader = new FileReader();
-        reader.readAsArrayBuffer(blob);
-        reader.onload = (loadEvent) => {
-          var arrayBuffer = xhr.response; //arrayBuffer
+        this.$axios({
+          methods: 'get',
+          uri: '/word',
+          responseType: "arraybuffer",
+          successCallback: (res) => {
+              console.log(res);
+              console.log(mammoth);
+            mammoth
+              .convertToHtml({ arrayBuffer: res.data })
+              .then(result => {
+                  console.log(result)
+                  this.vHtml = result.value
+              })
+              .done();
+          },
+        });
+      // var xhr = new XMLHttpRequest();
+      // xhr.open('GET', `https://api.tim007.xyz:8383/word`);
+      // xhr.responseType = 'arraybuffer';
+      // xhr.onload = (e) => {
+      //     let content = xhr.response;
+      //     console.log('eeeeeeeee', content);
+      //   let blob = new Blob([content]);
+      //   let reader = new FileReader();
+      //   reader.readAsArrayBuffer(blob);
+      //   reader.onload = (loadEvent) => {
+      //     var arrayBuffer = xhr.response; //arrayBuffer
 
-          mammoth
-            .convertToHtml({ arrayBuffer: arrayBuffer })
-            .then((res) => {
-              console.log(res, this.vHtml);
-              this.vHtml = res.value;
-            })
-            .done();
-        };
-      };
-      xhr.send();
+      //     mammoth
+      //       .convertToHtml({ arrayBuffer: arrayBuffer })
+      //       .then((res) => {
+      //         console.log(res, this.vHtml);
+      //         this.vHtml = res.value;
+      //       })
+      //       .done();
+      //   };
+      // };
+      // xhr.send();
     },
   },
 };
