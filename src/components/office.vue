@@ -26,7 +26,7 @@ export default {
     getWord() {
         this.$axios({
           methods: 'get',
-          uri: '/word',
+          uri: 'https://www.tim007.xyz/word',
           responseType: "arraybuffer",
           successCallback: (res) => {
               console.log(res);
