@@ -1,90 +1,115 @@
 <template>
-    <el-container style="height: 100%">
-      <el-aside width="250px">
-        <el-menu default-active="1-1"
-                 class="el-menu-vertical-demo my-el-menu"
-                 background-color="#545c64"
-                 text-color="#fff"
-                 active-text-color="#ffd04b"
-                 @select="getIndex"
-                 style="height: 800px">
-          <el-submenu index="1">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>项目</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="1-1">表格嵌套表单</el-menu-item>
-              <el-menu-item @click="$router.push('/keepalive')">keepAlive</el-menu-item>
-              <el-menu-item index="1-2">AES加密</el-menu-item>
-              <el-menu-item index="1-3">中断axios</el-menu-item>
-              <el-menu-item index="1-4">echarts</el-menu-item>
-              <el-menu-item index="1-5">取数组最大值</el-menu-item>
-              <el-menu-item index="1-6">树形表格下拉(每次只展开一个)</el-menu-item>
-              <el-menu-item index="1-7">火星登机牌</el-menu-item>
-              <el-menu-item index="1-8">文件上传(base64)</el-menu-item>
-              <el-menu-item index="1-9">高德地图</el-menu-item>
-              <el-menu-item index="1-10">文件上传下载(二进制流)</el-menu-item>
-              <el-menu-item index="1-11">动态生成表格</el-menu-item>
-              <el-menu-item index="1-12">Vue.extent</el-menu-item>
-              <el-menu-item index="1-13">在线预览office</el-menu-item>
-              <el-menu-item index="1-14">富文本编辑器</el-menu-item>
-              <el-menu-item index="1-15">滚动事件</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-        </el-menu>
-      </el-aside>
-      <el-main id="scorll">
-        <change v-if="index === '1-1'"></change>
-        <selected v-if="index === '1-1'"></selected>
-        <aes v-if="index === '1-2'"></aes>
-        <cancelAjax v-if="index === '1-3'" />
-        <echarts v-if="index === '1-4'" />
-        <getBigNum v-if="index === '1-5'" />
-        <treeTable v-if="index === '1-6'" />
-        <addNew v-if="index === '1-7'" />
-        <upload v-if="index === '1-8'" />
-        <gdMap v-if="index === '1-9'" />
-        <upload2 v-if="index === '1-10'" />
-        <myTable v-if="index === '1-11'" />
-        <extendTest v-if="index === '1-12'" />
-        <office v-if="index === '1-13'" />
-        <quill v-if="index === '1-14'" />
-        <scoll v-if="index === '1-15'" />
-      </el-main>
-    </el-container>
+  <el-container style="height: 100%">
+    <el-aside width="250px">
+      <el-menu
+        :default-active="$route.path"
+        class="el-menu-vertical-demo my-el-menu"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b"
+        @select="getIndex"
+        :router="true"
+        style="height: 800px"
+      >
+        <el-submenu index="1">
+          <template slot="title">
+            <span>项目</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item :index="item.path" v-for="(item, index) in menuList" :key="index">{{item.title}}</el-menu-item>
+            
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="2">
+          <template slot="title">
+            <span>Test</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item @click="$router.push('/keepalive')"
+              >keepAlive</el-menu-item
+            >
+          </el-menu-item-group>
+        </el-submenu>
+      </el-menu>
+    </el-aside>
+    <el-main id="scorll">
+      <router-view></router-view>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-// import change from '../components/change.vue';
-// import selected from '../components/selected.vue';
-// import aes from '../components/aes.vue';
-// import cancelAjax from '../components/cancelAjax.vue';
-// import echarts from '../components/echarts.vue';
-
 export default {
   data() {
     return {
-      index: '1-12',
+      index: '',
+      menuList: [
+        {
+          path: '/home/change',
+          title: '表格嵌套表单'
+        },
+        {
+          path: '/home/aes',
+          title: 'AES加密'
+        },
+        {
+          path: '/home/cancelAjax',
+          title: '中断axios'
+        },
+        {
+          path: '/home/echarts',
+          title: 'echarts'
+        },
+        {
+          path: '/home/getBigNum',
+          title: '取数组最大值'
+        },
+        {
+          path: '/home/treeTable',
+          title: '树形表格下拉(每次只展开一个)'
+        },
+        {
+          path: '/home/addNew',
+          title: '火星登机牌'
+        },
+        {
+          path: '/home/upload',
+          title: '文件上传(base64)'
+        },
+        {
+          path: '/home/gdMap',
+          title: '高德地图'
+        },
+        {
+          path: '/home/upload2',
+          title: '文件上传下载(二进制流)'
+        },
+        {
+          path: '/home/myTable',
+          title: '动态生成表格'
+        },
+        {
+          path: '/home/extendTest',
+          title: 'Vue.extent'
+        },
+        {
+          path: '/home/office',
+          title: '在线预览office'
+        },
+        {
+          path: '/home/quill',
+          title: '富文本编辑器'
+        },
+        {
+          path: '/home/scoll',
+          title: '滚动事件'
+        },
+        {
+          path: '/home/directive',
+          title: 'vue指令'
+        }
+      ]
     };
-  },
-  components: {
-    change: () => import('../components/change.vue'),
-    selected: () => import('../components/selected.vue'),
-    aes: () => import('../components/aes.vue'),
-    cancelAjax: () => import('../components/cancelAjax.vue'),
-    echarts: () => import('../components/echarts.vue'),
-    getBigNum: () => import('../components/getBigNum.vue'),
-    treeTable: () => import('../components/treeTable.vue'),
-    addNew: () => import('../components/addNew.vue'),
-    upload: () => import('../components/upload.vue'),
-    gdMap: () => import('../components/gdMap.vue'),
-    upload2: () => import('../components/upload2.vue'),
-    myTable: () => import('../components/myTable.vue'),
-    extendTest: () => import('../components/extendTest.vue'),
-    office: () => import('../components/office.vue'),
-    quill: () => import('../components/quill.vue'),
-    scoll: () => import('../components/scoll.vue'),
   },
   methods: {
     getIndex(index) {
