@@ -112,6 +112,13 @@ module.exports = {
           '^/word': '',
         },
       },
+      '/op': {
+        target: 'https://view.officeapps.live.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/op': '',
+        },
+      },
     },
   },
 };
