@@ -107,6 +107,14 @@ export default {
         {
           path: '/home/directive',
           title: 'vue指令'
+        },
+        {
+          path: '/home/elselect',
+          title: 'el-select选择器'
+        },
+        {
+          path: '/home/tooltip',
+          title: '手写tooltip'
         }
       ]
     };

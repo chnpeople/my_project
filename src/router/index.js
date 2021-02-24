@@ -106,6 +106,16 @@ const routes = [
         name: 'directive',
         component: () => import('../components/directive.vue'),
       },
+      {
+        path: '/home/elselect',
+        name: 'elselect',
+        component: () => import('../components/elselect.vue'),
+      },
+      {
+        path: '/home/tooltip',
+        name: 'tooltip',
+        component: () => import('../components/tooltip.vue'),
+      },
     ],
   },
   {

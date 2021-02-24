@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import axios from 'axios';
+import qs from 'qs';
 
 function ajax(options) {
   const CancelToken = axios.CancelToken;
   axios({
     method: options.methods,
     url: options.uri,
-    data: options.data,
+    params: options.data,
     responseType: options.responseType,
     cancelToken: new CancelToken(function executor(c) {
       Vue.$httpRequestList.push(c);

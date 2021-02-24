@@ -84,8 +84,15 @@ module.exports = {
           '^/json': '',
         },
       },
+      // '/api': {
+      //   target: 'http://api.tim007.xyz:8383/api',
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/api': '',
+      //   },
+      // },
       '/api': {
-        target: 'http://api.tim007.xyz:8383/api',
+        target: 'http://www.snrthn.com/api',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '',
