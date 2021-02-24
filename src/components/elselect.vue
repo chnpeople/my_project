@@ -44,7 +44,7 @@ export default {
         ],
       },
       ruleForm: {
-        name: ',',
+        name: '',
       },
       options: [],
       value: [],
@@ -69,9 +69,10 @@ export default {
         successCallback: (res) => {
           console.log(res, this);
           this.options = res.data;
-          this.ruleForm.name = this.value.join(',');
         },
       });
+      //不能写到axios的res里面，否则不会自动清除未填校验
+      this.ruleForm.name = this.value.join(',');
     },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
