@@ -6,8 +6,9 @@
       <h2><a @click="watchPPT" target="_blank">ppt预览</a></h2>
       
     </div>
-    <el-dialog title="文件预览" :visible.sync="dialogVisible" width="50%">
+    <div v-if="dialogVisible" class="full-screen">
       <pdf
+        class="my-pdf"
         :src="pptLink"
         ref="pdf"
         :page="pageNum"
@@ -56,9 +57,9 @@
       >
         逆时针</el-button
       >
-    </el-dialog >
+    </div >
     <el-dialog title="文件预览" :visible.sync="dialogVisible2" width="50%">
-      <div v-html="vHtml" style="height: 700px"></div>
+      <div v-html="vHtml"></div>
     </el-dialog>
   </div>
 </template>
@@ -85,6 +86,9 @@ export default {
       loadedRatio: 0,
       curPageNum: 0,
     };
+  },
+  mounted() {
+
   },
   methods: {
     watchPPT() {
@@ -167,4 +171,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.my-pdf {
+  width: 40%;
+  margin: 0 auto;
+}
+.full-screen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: auto;
+}
+</style>
