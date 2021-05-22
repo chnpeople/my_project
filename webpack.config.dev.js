@@ -42,8 +42,7 @@ module.exports = {
       {
         // 配置 babel
         test: /\.js$/,
-        exclude: /(node_modules)/,
-        include: [path.resolve(__dirname, 'node_modules/chntoast')],
+        exclude: /(node_modules)/,    //IE兼容，注释可在IE浏览器打开开发环境
         use: {
           loader: 'babel-loader',
           options: {

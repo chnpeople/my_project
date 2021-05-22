@@ -79,8 +79,7 @@ module.exports = {
       {
         // 配置 babel
         test: /\.js$/,
-        exclude: /(node_modules)/,
-        include: path.resolve(__dirname, 'js'),
+        // exclude: /(node_modules)/,  //生产环境兼容IE，此项注释
         use: {
           loader: 'babel-loader',
           options: {
