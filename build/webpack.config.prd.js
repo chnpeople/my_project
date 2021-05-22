@@ -80,6 +80,7 @@ module.exports = {
         // 配置 babel
         test: /\.js$/,
         exclude: /(node_modules)/,
+        include: path.resolve(__dirname, 'js'),
         use: {
           loader: 'babel-loader',
           options: {

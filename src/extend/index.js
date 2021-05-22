@@ -3,7 +3,7 @@ import Toast from './Toast.vue';
 
 const ToastConstructor = Vue.extend(Toast);
 
-function showToast(text, time=2000) {
+function showToast(text) {
   const toastDom = new ToastConstructor({
     el: document.createElement('div'),
     data() {
@@ -18,7 +18,7 @@ function showToast(text, time=2000) {
 
   setTimeout(() => {
     toastDom.show = false;
-  }, time);
+  }, 2000);
 }
 
 function toastRegistry() {
