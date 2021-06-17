@@ -116,6 +116,11 @@ const routes = [
         name: 'tooltip',
         component: () => import('../components/tooltip.vue'),
       },
+      {
+        path: '/home/treeAndSelect',
+        name: 'treeAndSelect',
+        component: () => import('../components/treeAndSelect.vue'),
+      },
     ],
   },
   {

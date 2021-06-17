@@ -115,6 +115,10 @@ export default {
         {
           path: '/home/tooltip',
           title: '手写tooltip'
+        },
+        {
+          path: '/home/treeAndSelect',
+          title: '选择器嵌套tree(v-clickoutside指令)'
         }
       ]
     };
