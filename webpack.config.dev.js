@@ -16,6 +16,12 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
   },
 
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    }
+  },
+
   module: {
     rules: [
       {
@@ -105,6 +111,13 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/version': '',
+        },
+      },
+      '/menu': {
+        target: 'http://api.tim007.xyz:8383/menu',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/menu': '',
         },
       },
       '/upload': {
