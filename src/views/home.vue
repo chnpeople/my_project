@@ -119,7 +119,11 @@ export default {
         {
           path: '/home/treeAndSelect',
           title: '选择器嵌套tree(v-clickoutside指令)'
-        }
+        },
+        {
+          path: '/home/longTree',
+          title: '上万条数据树形控件'
+        },
       ]
     };
   },

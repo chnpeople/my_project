@@ -12,6 +12,8 @@ import  Toast from './extend/index';  //项目自定义的组件
 import myToast from 'chntoast';      // npm包组件
 // import v_open from './directives/open'; //全局指令
 import v_has from 'vue-v-has';
+import store from './store/index';
+import routerAuth from './premission';
 
 var _vue = require('vue');
 
@@ -86,7 +88,7 @@ Vue.use(v_has);
 Vue.use(Toast);
 Vue.use(myToast);
 Vue.use(VueAMap);
-
+Vue.use(routerAuth, {router});
 const plugin = {
   install() {
     function Test() {
@@ -120,10 +122,18 @@ Vue.mixin({
 //全局指令
 // Vue.directive('open',v_open);
 
-new Vue({
+const app = new Vue({
   router,
   ajax,
+  store,
   myOption: '不要看我的控制台',
   render: (h) => h(App),
-}).$mount('#app');
+});
+app.$mount('#app');
+//动态添加路由后再渲染app
+// router.onReady(() => {
+//   Vue.prototype.$auth(() => {
+//     app.$mount('#app');
+//   });
+// });
 

@@ -5,52 +5,63 @@
       <form>
         <div class="username">
           <span class="username">Username:</span>
-          <input type="text"
-                 v-model="username"
-                 class="name"
-                 placeholder="输入我的名字"
-                 required="">
+          <input
+            type="text"
+            v-model="username"
+            class="name"
+            placeholder="输入我的名字"
+            required=""
+          />
           <div class="clear"></div>
         </div>
         <div class="password-agileits">
           <span class="username">Password:</span>
-          <input type="password"
-                 v-model="password"
-                 class="password"
-                 placeholder="我的QQ号">
+          <input
+            type="password"
+            v-model="password"
+            class="password"
+            placeholder="我的QQ号"
+          />
           <div class="clear"></div>
         </div>
         <div class="rem-for-agile">
-          <input type="checkbox"
-                 v-model="remember"
-                 @click="saveMyInfo"
-                 class="remember">Remember me<br>
-          <a href="#">Forgot Password</a><br>
+          <input
+            type="checkbox"
+            v-model="remember"
+            @click="saveMyInfo"
+            class="remember"
+          />Remember me<br />
+          <a href="#">Forgot Password</a><br />
         </div>
         <div class="login-w3">
-          <el-button style="float: right; margin-right: 38px"
-                     type="primary"
-                     @click="login"
-                     class="login">Login</el-button>
+          <el-button
+            style="float: right; margin-right: 38px"
+            type="primary"
+            @click="login"
+            class="login"
+            >Login</el-button
+          >
         </div>
         <div class="clear"></div>
       </form>
     </div>
-
   </div>
 </template>
 
 <script>
+// import { asyncRouters } from '../router/index';
 export default {
   data() {
     return {
       username: '',
       password: '',
       remember: false,
+      routerList:[]
     };
   },
   created() {
     this.checkName();
+    // this.routerList = asyncRouters;
   },
   methods: {
     checkName() {
@@ -71,13 +82,14 @@ export default {
         return;
       } else {
         if (this.password === '289815438') {
-					if (this.remember == true) {
-						window.localStorage.setItem('name', JSON.stringify(this.username));
-					}
-          this.$router.push('/home');
-        }else {
-					this.$message.warning('密码错拉！');
-				}
+          if (this.remember == true) {
+            window.localStorage.setItem('name', JSON.stringify(this.username));
+            this.$store.commit('login');
+            this.$router.push('/home');
+          }
+        } else {
+          this.$message.warning('密码错拉！');
+        }
       }
     },
   },
