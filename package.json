@@ -44,7 +44,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-polyfill": "^6.26.0",
-    "browserslist": "^4.16.0",
+    "browserslist": "^4.16.5",
     "caniuse-lite": "^1.0.30001170",
     "compression-webpack-plugin": "^5.0.1",
     "css-loader": "^3.4.2",
