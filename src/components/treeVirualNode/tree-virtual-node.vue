@@ -48,7 +48,7 @@
 </template>
 
 <script type="text/jsx">
-  import ElCheckbox from 'element-ui/packages/checkbox';
+  import {ElCheckbox} from 'element-ui';
   import emitter from 'element-ui/src/mixins/emitter';
   import mixinNode from './mixin/node';
   import { getNodeKey } from './model/util';
