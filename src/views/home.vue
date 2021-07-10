@@ -34,6 +34,7 @@
     </el-aside>
     <el-main id="scorll">
       <router-view></router-view>
+      <div id="sub"></div>
     </el-main>
   </el-container>
 </template>
@@ -123,6 +124,10 @@ export default {
         {
           path: '/home/longTree',
           title: '上万条数据树形控件'
+        },
+        {
+          path: '/home/sub',
+          title: '微前端'
         },
       ]
     };

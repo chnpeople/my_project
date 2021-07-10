@@ -14,6 +14,19 @@ import myToast from 'chntoast';      // npm包组件
 import v_has from 'vue-v-has';
 import store from './store/index';
 import routerAuth from './premission';
+//微前端
+import { registerMicroApps, start } from 'qiankun';
+
+registerMicroApps([
+  {
+    name: 'subApp', // app name registered
+    entry: '//localhost:8081',
+    container: '#sub',
+    activeRule: '/#/home/sub',
+  },
+]);
+
+start();
 
 var _vue = require('vue');
 

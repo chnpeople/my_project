@@ -127,6 +127,10 @@ const routes = [
         name: 'longTree',
         component: () => import('../components/longTree.vue'),
       },
+      {
+        path: '/home/sub',
+        name: 'sub',
+      },
     ],
   },
   {
@@ -266,7 +270,7 @@ export const asyncRouters = [
 ];
 
 const router = new VueRouter({
-  // mode: "history",
+  // mode: 'history',
   routes,
 });
 
