@@ -20,7 +20,7 @@ import { registerMicroApps, start } from 'qiankun';
 registerMicroApps([
   {
     name: 'subApp', // app name registered
-    entry: '//sub.tim007.xyz/home.html',
+    entry: '//www.tim007.xyz/sub',
     container: '#sub',
     activeRule: '/#/home/sub',
   },
