@@ -73,7 +73,7 @@
 
 <script type="text/jsx">
   import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
-  import ElCheckbox from '../../../node_modules/element-ui/packages/checkbox';
+  // import ElCheckbox from '../../../node_modules/element-ui/packages/checkbox';
   import emitter from 'element-ui/src/mixins/emitter';
   import mixinNode from './mixin/node';
   import { getNodeKey } from './model/util';
@@ -105,7 +105,7 @@
 
     components: {
       ElCollapseTransition,
-      ElCheckbox,
+      // ElCheckbox,
       NodeContent: {
         props: {
           node: {
