@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/',
     name: 'login',
-    component: () => import('@/views/login.vue'),
+    component: () => import('../views/login.vue'),
     meta: {
       keepAlive: false,
     },

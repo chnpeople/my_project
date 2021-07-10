@@ -33,7 +33,7 @@ function queryList(routesList) {
 
 function flattenTree(list, views) {
   list.forEach((item) => {
-    item.component = () => import(`@/${views}/${item.name}.vue`);
+    // item.component = () => import(`@/${views}/${item.name}.vue`);
     if (item.children && item.children.length > 0) {
       flattenTree(item.children, 'components');
     }
@@ -42,7 +42,7 @@ function flattenTree(list, views) {
 }
 
 const loadView = (view) => {
-  return (resolve) => require([`@/views/${view}.vue`], resolve)
-}
+  // return (resolve) => require([`@/views/${view}.vue`], resolve)
+};
 
 export default { install };

@@ -21,6 +21,12 @@ module.exports = {
     path: path.join(__dirname, '../dist'),
   },
 
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    }
+  },
+
   module: {
     rules: [
       {
