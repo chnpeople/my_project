@@ -1,6 +1,6 @@
 <template>
   <el-container style="height: 100%">
-    <el-aside width="250px">
+    <el-aside>
       <el-menu
         :default-active="$route.path"
         class="el-menu-vertical-demo my-el-menu"
