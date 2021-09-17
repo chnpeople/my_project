@@ -1,12 +1,9 @@
 <template>
   <div>
-    <div id="main"
-         style="width: 500px; height: 500px">
-    </div>
-    <br>
+    <div id="main" style="width: 500px; height: 500px"></div>
+    <br />
     <h1>指令方式</h1>
-    <div v-echarts="option"
-         style="width: 500px;height: 500px;"></div>
+    <div v-echarts="option" style="width: 500px;height: 500px;"></div>
   </div>
 </template>
 
@@ -42,9 +39,13 @@ export default {
     echarts: V_Echarts,
   },
   created() {
+    window.change = this.change;
     console.log(this.$options);
   },
   methods: {
+    change(item) {
+      console.log('哈哈', item);
+    },
     myEcharts() {
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(document.getElementById('main'));
@@ -56,11 +57,30 @@ export default {
           subtext: '纯属虚构',
         },
         tooltip: {
-          trigger: 'axis',
+          trigger: 'item',
+          triggerOn: `mousemove`,
+          enterable: true,
+          hideDelay: 800,
+          formatter: (parm) => {
+            console.log(parm);
+            let data = parm.data;
+            return `<div style="pointer-events: all;line-height: 24px; border-radius: 2px; background: #fff; color: #736AF2;padding: 0 6px; margin-top: 5px; text-align: center;" onclick="change(${data})">${parm.seriesName} ></div>`;
+          },
         },
         legend: {
           data: ['蒸发量', '降水量'],
         },
+        dataZoom: [
+          {
+            type: 'inside',
+            start: 70,
+            end: 100,
+          },
+          {
+            start: 70,
+            end: 100,
+          },
+        ],
         toolbox: {
           show: true,
           feature: {
@@ -73,6 +93,12 @@ export default {
         calculable: true,
         xAxis: [
           {
+            name: 'X轴',
+            nameTextStyle: {
+              color: 'green',
+              fontSize: 16,
+              padding: 10,
+            },
             type: 'category',
             data: [
               '1月',
@@ -98,6 +124,7 @@ export default {
         series: [
           {
             name: '蒸发量',
+            id: '0759',
             type: 'bar',
             data: [
               2.0,
@@ -119,9 +146,9 @@ export default {
                 { type: 'min', name: '最小值' },
               ],
               tooltip: {
-                trigger: "item",
-                formatter: '我是tooltip'
-              }
+                trigger: 'item',
+                formatter: '我是tooltip',
+              },
             },
             markLine: {
               data: [{ type: 'average', name: '平均值' }],
@@ -140,5 +167,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
