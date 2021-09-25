@@ -131,6 +131,11 @@ const routes = [
         path: '/home/sub',
         name: 'sub',
       },
+      {
+        path: '/home/tree',
+        name: 'tree',
+        component: () => import('../components/tree.vue'),
+      },
     ],
   },
   {

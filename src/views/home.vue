@@ -129,6 +129,10 @@ export default {
           path: '/home/sub',
           title: '微前端'
         },
+        {
+          path: '/home/tree',
+          title: '树形扁平化'
+        },
       ]
     };
   },
