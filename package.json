@@ -22,6 +22,7 @@
     "crypto-js": "^4.0.0",
     "echarts": "^4.7.0",
     "element-ui": "^2.13.0",
+    "jsmind": "^0.4.6",
     "mammoth": "^1.4.15",
     "qiankun": "^2.4.3",
     "quill": "^1.3.7",
