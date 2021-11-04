@@ -8,6 +8,9 @@
     </span>
     <p v-has="'A'" class="pink"></p>
     <p v-has="'B'" class="skyblue"></p>
+    <div style="width:100px;height:100px;backgroundColor:pink;" @click="go" ref="my">
+      点击
+    </div>
   </div>
 </template>
 
@@ -22,6 +25,15 @@ export default {
       show: false,
     }
   },
+  mounted() {
+    let dom = this.$refs.my
+    dom.classList.add('haha')
+
+    var elem = document.createElement('div')
+    elem.className='myhaha';
+    dom.parentNode.replaceChild(elem, dom)
+    elem.appendChild(dom)
+  },
   methods: {
     login(val) {
       if(val == 'A') {
@@ -31,6 +43,9 @@ export default {
         window.localStorage.removeItem('login');
         window.localStorage.setItem('login',JSON.stringify('B'))
       }
+    },
+    go() {
+      console.log('sfdfsafdsfdsafdsfds');
     }
   },
 };
@@ -48,5 +63,11 @@ export default {
   height: 500px; 
   border: 1px solid blue; 
   background-color: skyblue;
+}
+.haha {
+  pointer-events: none;
+}
+.myhaha { 
+  cursor: not-allowed;
 }
 </style>
