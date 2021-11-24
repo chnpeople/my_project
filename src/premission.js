@@ -33,7 +33,8 @@ function queryList(routesList) {
 
 function flattenTree(list, views) {
   list.forEach((item) => {
-    // item.component = () => import(`@/${views}/${item.name}.vue`);
+    //动态路由控制37是否注释
+    item.component = () => import(`@/${views}/${item.name}.vue`);
     if (item.children && item.children.length > 0) {
       flattenTree(item.children, 'components');
     }
