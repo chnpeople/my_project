@@ -174,10 +174,10 @@ const app = new Vue({
   myOption: '不要看我的控制台',
   render: (h) => isPC ? h(App) : h(AppMobile),
 });
-// app.$mount('#app');
+app.$mount('#app');
 //动态添加路由后再渲染app
-router.onReady(() => {
-  Vue.prototype.$auth(() => {
-    app.$mount('#app');
-  });
-});
+// router.onReady(() => {
+//   Vue.prototype.$auth(() => {
+//     app.$mount('#app');
+//   });
+// });
