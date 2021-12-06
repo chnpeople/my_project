@@ -19,6 +19,12 @@ import routerAuth from './premission';
 import { registerMicroApps, start } from 'qiankun';
 import rem from './utils/rem';
 
+// vue视频
+import VideoPlayer from 'vue-video-player';
+require('video.js/dist/video-js.css');
+require('vue-video-player/src/custom-theme.css');
+Vue.use(VideoPlayer);
+
 registerMicroApps([
   {
     name: 'subApp', // app name registered
@@ -172,7 +178,7 @@ const app = new Vue({
   ajax,
   store,
   myOption: '不要看我的控制台',
-  render: (h) => isPC ? h(App) : h(AppMobile),
+  render: (h) => (isPC ? h(App) : h(AppMobile)),
 });
 app.$mount('#app');
 //动态添加路由后再渲染app

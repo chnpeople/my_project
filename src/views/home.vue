@@ -133,6 +133,10 @@ export default {
           path: '/home/tree',
           title: '树形扁平化'
         },
+        {
+          path: '/home/swiper',
+          title: 'swiper'
+        },
       ]
     };
   },

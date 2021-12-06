@@ -136,6 +136,11 @@ const routes = [
         name: 'tree',
         component: () => import('../components/tree.vue'),
       },
+      {
+        path: '/home/swiper',
+        name: 'swiper',
+        component: () => import('../components/swiper.vue'),
+      },
     ],
   },
   {

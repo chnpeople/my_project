@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     getFile(e) {
+      console.log(e);
       console.log(e.target.files[0]);
       let blob = new Blob([e.target.files[0]]);
       let url = URL.createObjectURL(blob);
