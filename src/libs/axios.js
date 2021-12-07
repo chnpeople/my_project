@@ -5,6 +5,7 @@ import qs from 'qs';
 function ajax(options) {
   const CancelToken = axios.CancelToken;
   axios({
+    headers: options.headers,
     method: options.methods,
     url: options.uri,
     params: options.data,

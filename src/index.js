@@ -20,10 +20,6 @@ import { registerMicroApps, start } from 'qiankun';
 import rem from './utils/rem';
 
 // vue视频
-import VideoPlayer from 'vue-video-player';
-require('video.js/dist/video-js.css');
-require('vue-video-player/src/custom-theme.css');
-Vue.use(VideoPlayer);
 
 registerMicroApps([
   {
