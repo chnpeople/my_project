@@ -16,7 +16,7 @@
       <swiper-slide class="slide-4"></swiper-slide>
       <swiper-slide class="slide-5"></swiper-slide>
       <swiper-slide>
-        <video width="100%" height="100%" :src="url" controls></video>
+        <video width="100%" height="100%" disablePictureInPicture="true" controlslist="nodownload" src="https://www.youtube.com/embed/jzXnUw04ldQ" controls></video>
       </swiper-slide>
       <div
         class="swiper-button-prev swiper-button-white"
@@ -80,7 +80,7 @@ export default {
       },
       methods: 'GET',
       responseType: 'blob',
-      uri: 'http://www.tim007.xyz:8383/video',
+      uri: 'http://api.tim007.xyz:8383/video',
       successCallback: (res) => {
         console.log(res);
         let blob = new Blob([res.data]);
