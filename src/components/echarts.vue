@@ -219,6 +219,7 @@ export default {
       };
 
       var option2 = {
+        
         dataZoom: [
           // {
           //   type: 'slider',
