@@ -4,13 +4,12 @@ function install(Vue, router) {
   let routesList = router.router.options.routes;
   Vue.prototype.$auth = async (fn) => {
     let list = await queryList(routesList);
-    list = flattenTree(list,'views');
+    list = flattenTree(list, 'views');
     // eslint-disable-next-line no-console
     console.log('list', list);
     router.router.matcher = new VueRouter().matcher;
     router.router.options.routes = list;
     // eslint-disable-next-line no-console
-    console.log(router);
     router.router.addRoutes(list);
     fn();
   };
