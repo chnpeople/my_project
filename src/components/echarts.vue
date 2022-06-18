@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1>大数据散点图</h1>
+    <div id="sandian" style="width: 1500px;height: 500px;"></div>
     <div id="main" style="width: 500px; height: 500px"></div>
     <br />
     <h1>指令方式</h1>
@@ -103,6 +105,9 @@ export default {
     console.log(this.$options);
   },
   methods: {
+    goto() {
+      alert(123)
+    },
     change(item) {
       console.log('哈哈', item);
     },
@@ -110,6 +115,7 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(document.getElementById('main'));
       var xy = echarts.init(document.getElementById('xy'));
+      var sandian = echarts.init(document.getElementById('sandian'));
 
       // 指定图表的配置项和数据
       var option = {
@@ -219,7 +225,6 @@ export default {
       };
 
       var option2 = {
-        
         dataZoom: [
           // {
           //   type: 'slider',
@@ -441,12 +446,40 @@ export default {
         ],
       };
 
+
+      let sdList = []
+      for (let index = 0; index < 5000; index++) {
+       let temp = [Math.floor(Math.random(1) * 100), Math.floor(Math.random(1) * 100)]
+        sdList.push(temp)
+      }
+      console.log(sdList);
+
+      var option3 = {
+        xAxis: {},
+        yAxis: {},
+        tooltip: {
+          formatter: val => {
+            console.log('val', val);
+            return `<div>x轴:${val.data[0]}</div><div @click="goto">y轴:${val.data[1]}</div>`
+          }
+        },
+        series: [
+          {
+            symbolSize: 20,
+            data: sdList,
+            type: 'scatter',
+          },
+        ],
+      };
+
       // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
       xy.setOption(option2);
+      sandian.setOption(option3);
     },
   },
   mounted() {
+    window.goto = this.goto
     this.myEcharts();
   },
 };
