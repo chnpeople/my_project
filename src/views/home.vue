@@ -13,7 +13,7 @@
       >
         <el-submenu index="1">
           <template slot="title">
-            <span>项目</span>
+            <span>我的项目</span>
           </template>
           <el-menu-item-group>
             <el-menu-item :index="item.path" v-for="(item, index) in menuList" :key="index">{{item.title}}</el-menu-item>
