@@ -80,7 +80,7 @@ export default {
       },
       methods: 'GET',
       responseType: 'blob',
-      uri: 'http://api.tim007.xyz:8383/video',
+      uri: 'https://www.tim007.xyz/video',
       successCallback: (res) => {
         console.log(res);
         let blob = new Blob([res.data]);
