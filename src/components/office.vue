@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     watchPPT() {
-      this.pptLink = pdf.createLoadingTask('http://www.tim007.xyz:8383/pdf');
+      this.pptLink = pdf.createLoadingTask('https://www.tim007.xyz/pdf');
       this.pptLink.promise.then((pdf) => {
         this.numPages = pdf.numPages;
       });
