@@ -89,10 +89,12 @@ export default {
       const tbody = document.createElement('tbody');
       let span = 1;
       this.table.forEach((item, idx) => {
-        span += 1;
+        // span += 1;
         const tr = document.createElement('tr');
         let tdLength = item.length;
         item.forEach((item2, index) => {
+          console.log(item, idx);
+          console.log(item2, index);
           const td = document.createElement('td');
           td.setAttribute(
             'style',
@@ -103,14 +105,23 @@ export default {
           } else if (item.length === 3 && index === 2) {
             td.setAttribute('colspan', 2);
           }
-          if (idx != 0 && index === 0 && item2 == this.table[idx - 1][index]) {
+          if (
+            idx > 1 &&
+            idx < tdLength.length &&
+            item2 == this.table[idx - 1][index]
+          ) {
             return;
           }
           span += 1;
-          if (idx != 0 && index === 0 && item2 == this.table[idx + 1][index]) {
+          if (
+            idx > 1 &&
+            idx < tdLength.length &&
+            item2 == this.table[idx + 1][index]
+          ) {
             span += 1;
             td.setAttribute('rowspan', span);
           }
+          console.log(span);
           tr.appendChild(td);
           td.innerHTML = item2;
         });
