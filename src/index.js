@@ -169,6 +169,13 @@ if (
   isPC = false;
 }
 
+var ua = navigator.userAgent.toLowerCase()
+  if (ua.indexOf('micromessenger') != -1) {
+    console.log('微信')
+  } else {
+    console.log('不是微信')
+  }
+
 const app = new Vue({
   router,
   ajax,
